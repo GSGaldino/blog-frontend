@@ -1,0 +1,30 @@
+.Posts{
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.Posts .post{
+  position: relative;
+  display: block;
+  padding: 80px 130px;
+  margin: 20px 30px 20px 0px;
+  background: linear-gradient(#6a6a6d, #dcdce6);
+  border-radius: 8px;
+}
+
+.Posts .post p{
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  text-align: center;
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  padding: 20px 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
