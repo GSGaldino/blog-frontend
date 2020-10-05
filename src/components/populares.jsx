@@ -10,7 +10,7 @@ export default function Populares(){
 
   useEffect(() => {
     async function getData(){
-      const response = await fetch(`${url}/api/posts`);
+      const response = await fetch(`https://backend-bl.herokuapp.com/api/posts`);
       const data = await response.json();
 
       setPost(data[1]);

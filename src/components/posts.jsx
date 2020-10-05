@@ -11,7 +11,7 @@ export default function Posts() {
 
   useEffect(() => {
     async function setData() {
-      const response = await fetch(`${url}/api/posts`);
+      const response = await fetch(`https://backend-bl.herokuapp.com/api/posts`);
       const data = await response.json();
 
       setPosts(data);
@@ -32,7 +32,7 @@ export default function Posts() {
             <Link to={`/posts/${post.post_id}`} key={index}>
               <div
                 className="Post"
-                style={{ backgroundImage: `url('${url}/${path}')` }}
+                style={{ backgroundImage: `url('https://backend-bl.herokuapp.com/${path}')` }}
               >
                 <p>{post.post_title}</p>
               </div>
