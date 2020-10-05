@@ -10,7 +10,6 @@ export default function Posts() {
     : 'http://localhost:3333'
 
   useEffect(() => {
-    //TODO fazer url dinamica para produção
     async function setData() {
       const response = await fetch(`${url}/api/posts`);
       const data = await response.json();
