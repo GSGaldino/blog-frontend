@@ -1,0 +1,4 @@
+.Title h1,
+.Title p {
+  color: var(--text-color);
+}

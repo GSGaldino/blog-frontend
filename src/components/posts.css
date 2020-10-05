@@ -1,19 +1,30 @@
+.section-title{
+  margin-top: 80px;
+}
+
+.section-title h2{
+  color: var(--text-color);
+}
+
 .Posts{
   display: flex;
   overflow-x: scroll;
   position: relative;
 }
 
-.Posts .post{
+.Posts .Post{
   position: relative;
   display: block;
   padding: 80px 130px;
   margin: 20px 30px 20px 0px;
-  background: linear-gradient(#6a6a6d, #dcdce6);
   border-radius: 8px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #dcdce6;
 }
 
-.Posts .post p{
+.Posts .Post p{
   display: block;
   width: 100%;
   position: absolute;

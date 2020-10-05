@@ -4,7 +4,9 @@
   margin: 10px auto;
 }
 
-.navbar img{
+.navbar svg{
   width: 60px;
+  height: 60px;
   display: block;
+  cursor: pointer;
 }

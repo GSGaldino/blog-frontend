@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NavBar from '../../components/navbar';
+import Title from '../../components/title';
 import Posts from '../../components/posts';
 import Populares from '../../components/populares';
 
@@ -11,8 +12,7 @@ export default function Home(){
     <div className="Home">
       <div className="title">
         <NavBar />
-        <h1>Gabriel Soares</h1>
-        <p>Fullstack Javascript Developer</p>
+        <Title />
         <Posts />
       </div>
 

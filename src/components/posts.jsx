@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './posts.css';
 
 export default function Posts() {
   const [posts, setPosts] = useState([]);
+  const url = process.env.NODE_ENV === "production"
+    ? process.env.BACKEND_URL
+    : 'http://localhost:3333'
 
   useEffect(() => {
+    //TODO fazer url dinamica para produção
     async function setData() {
-      const response = await fetch('https://backend-bl.herokuapp.com/api/posts');
+      const response = await fetch(`${url}/api/posts`);
       const data = await response.json();
 
       setPosts(data);
-      console.log(data);
     }
     setData();
-  }, [])
+  }, [url])
 
   return (
     <>
@@ -22,13 +26,20 @@ export default function Posts() {
         <h2>Esta semana</h2>
       </div>
       <div className="Posts">
-        {posts.map(post => (
-          <div className="post">
-            <div className="post-thumbnail" key={post.post_id}>
-              <p>{post.post_title}</p>
-            </div>
-          </div>
-        ))}
+        {posts.map((post, index) => {
+          const path = post.path.substring(7);
+
+          return (
+            <Link to={`/posts/${post.post_id}`} key={index}>
+              <div
+                className="Post"
+                style={{ backgroundImage: `url('${url}/${path}')` }}
+              >
+                <p>{post.post_title}</p>
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </>
   )
